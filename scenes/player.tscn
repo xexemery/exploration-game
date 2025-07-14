@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://fqwdtnrhi3ro" path="res://assets/sprites/rpg_tiles/tile_0119.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dkymgvadbd6q8" path="res://scripts/player.gd" id="1_g2els"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(14, 13)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 5.02494
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
@@ -13,5 +13,5 @@ script = ExtResource("1_g2els")
 texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_g2els")
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_g2els")
