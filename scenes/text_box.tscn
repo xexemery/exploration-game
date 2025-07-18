@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk26aec2y1arg"]
+
+[ext_resource type="Script" uid="uid://bwh6ldexhfelt" path="res://scripts/text_box.gd" id="1_qdwih"]
+[ext_resource type="Texture2D" uid="uid://dfy7k30gqvdjv" path="res://assets/sprites/pirates_tiles/tile_0057.png" id="2_3ojeh"]
+[ext_resource type="FontFile" uid="uid://je2rlc04p3i" path="res://assets/fonts/PixelOperator8.ttf" id="3_nq18v"]
+
+[node name="TextBox" type="MarginContainer"]
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_qdwih")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_3ojeh")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nq18v")
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
